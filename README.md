@@ -32,8 +32,7 @@ Preview
  
 Acessar o projeto
 
-
-
+https://bryanfellas.github.io/site-de-academia-bom/
 
 Rodar localmente
 
