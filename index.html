@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>gains academy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<button id="btnDarkMode" class="btn-dark-mode" title="Alternar tema">🌙</button>
+
+<div id="telaHome" class="tela">
+  <h1 class="h1">academia</h1>
+  <div id="listaTreinos"></div>
+  <button id="btnNovoTreino" class="buto">+ novo treino</button>
+</div>
+
+<div id="telaEdicao" class="tela tela-oculta">
+  <div class="header-edicao">
+    <button id="btnVoltar" class="btn-voltar">← voltar</button>
+    <h2 id="nomeTreino">Treino novo</h2>
+    <button id="btnApagarTreino" class="btn-apagar-treino">🗑</button>
+  </div>
+  <div id="exercicios"></div>
+  <button id="addExercicio">+</button>
+</div>
+
+<div id="telaExercicio" class="tela tela-oculta">
+  <div class="header-edicao">
+    <button id="btnVoltarExercicio" class="btn-voltar">← voltar</button>
+    <h2 id="nomeExercicioTela"></h2>
+    <span id="badgeExercicioTela" class="badge-tier"></span>
+  </div>
+  <div id="areaExercicioDetalhe">
+    <img id="gifExercicio" src="" alt="" />
+    <div class="config-grid">
+      <div class="config-item">
+        <label>Séries</label>
+        <div class="num-control">
+          <button class="btn-num" data-campo="series" data-op="-">−</button>
+          <span id="valSeries">4</span>
+          <button class="btn-num" data-campo="series" data-op="+">+</button>
+        </div>
+      </div>
+      <div class="config-item">
+        <label>Repetições</label>
+        <div class="num-control">
+          <button class="btn-num" data-campo="reps" data-op="-">−</button>
+          <span id="valReps">12</span>
+          <button class="btn-num" data-campo="reps" data-op="+">+</button>
+        </div>
+      </div>
+      <div class="config-item">
+        <label>Carga (kg)</label>
+        <div class="num-control">
+          <button class="btn-num" data-campo="carga" data-op="-">−</button>
+          <span id="valCarga">0</span>
+          <button class="btn-num" data-campo="carga" data-op="+">+</button>
+        </div>
+      </div>
+      <div class="config-item">
+        <label>Descanso (s)</label>
+        <div class="num-control">
+          <button class="btn-num" data-campo="descanso" data-op="-">−</button>
+          <span id="valDescanso">90</span>
+          <button class="btn-num" data-campo="descanso" data-op="+">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="areaTimer">
+      <div id="timerDisplay">0:00</div>
+      <div id="timerBarra"><div id="timerBarraFill"></div></div>
+      <div class="timer-botoes">
+        <button id="btnIniciarTimer" class="btn-timer-iniciar">▶ Iniciar descanso</button>
+        <button id="btnResetTimer" class="btn-timer-reset">↺</button>
+      </div>
+    </div>
+
+    <div id="notasArea">
+      <label>Notas</label>
+      <textarea id="notasExercicio" placeholder="Ex: pegada fechada, focar na contração..."></textarea>
+    </div>
+  </div>
+</div>
+
+<div id="overlayBusca">
+  <div id="caixaBusca">
+    <div id="areaFiltros">
+      <div id="filtroGrupos"></div>
+      <div id="filtroTiers"></div>
+    </div>
+    <input id="inputBusca" placeholder="Pesquisar exercício...">
+    <div id="sugestoes"></div>
+  </div>
+</div>
+
+<div id="infoExercicio">
+  <div id="cardInfo">
+    <h2 id="infoNome"></h2>
+    <img id="infoImg" src="" alt="Imagem do exercício" />
+    <p id="infofoco"></p>
+    <p id="infoDificuldade"></p>
+    <p id="infoDescricao"></p>
+    <p id="infotier"></p>
+    <button id="fecharInfo">Fechar</button>
+  </div>
+</div>
+
+<div id="overlayConfirmarTreino">
+  <div class="caixaModal">
+    <p>Apagar este treino?</p>
+    <div class="confirmar-botoes">
+      <button id="btnConfirmarApagarTreino" class="btn-confirmar">Apagar</button>
+      <button id="btnCancelarApagarTreino" class="btn-cancelar">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<div id="overlayConfirmarExercicio">
+  <div class="caixaModal">
+    <p id="txtConfirmarExercicio">Remover este exercício?</p>
+    <div class="confirmar-botoes">
+      <button id="btnConfirmarRemoverEx" class="btn-confirmar">Remover</button>
+      <button id="btnCancelarRemoverEx" class="btn-cancelar">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<script src="baseExercicios.js"></script>
+<script src="java.js"></script>
+</body>
+</html>
